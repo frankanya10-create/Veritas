@@ -9,6 +9,7 @@ import FeaturesSection from "@/components/landing/FeaturesSection";
 import IntegrationsCloud from "@/components/landing/IntegrationsCloud";
 import Testimonials from "@/components/landing/Testimonials";
 import ArchitectureSection from "@/components/landing/ArchitectureSection";
+import AboutUs from "@/components/landing/AboutUs";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
 
@@ -24,6 +25,7 @@ export default function LandingClient() {
       <IntegrationsCloud />
       <Testimonials />
       <ArchitectureSection />
+      <AboutUs />
       <CTASection />
       <Footer />
     </main>

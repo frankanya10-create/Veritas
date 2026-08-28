@@ -28,6 +28,7 @@ export default function Footer() {
               <li><a href="#integrations" className="text-[11px] text-black/50 hover:text-black transition-colors font-[var(--font-heading)]">Integrations</a></li>
               <li><a href="/docs" className="text-[11px] text-black/50 hover:text-black transition-colors font-[var(--font-heading)]">Documentation</a></li>
               <li><a href="#architecture" className="text-[11px] text-black/50 hover:text-black transition-colors font-[var(--font-heading)]">Architecture</a></li>
+              <li><a href="#about" className="text-[11px] text-black/50 hover:text-black transition-colors font-[var(--font-heading)]">About Us</a></li>
             </ul>
           </div>
 

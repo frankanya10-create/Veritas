@@ -1,5 +1,5 @@
-import SignInClient from "./SignInClient";
+import { redirect } from "next/navigation";
 
 export default function SignInPage() {
-  return <SignInClient />;
+  redirect("/login");
 }

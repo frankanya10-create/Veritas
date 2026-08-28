@@ -211,7 +211,7 @@ export async function runChaosAudit(): Promise<HardshipReport> {
     overallRisk,
     vulnerabilities: tests,
     recommendations,
-    model: "llama3.2:3b",
+    model: ollama.getActiveModel(),
     latency_ms: Date.now() - start,
   };
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Geist_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import BackToTop from "@/components/BackToTop";
@@ -41,6 +42,18 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-black text-white scanline-overlay noise-bg">
         <Providers>{children}</Providers>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: "#111",
+              border: "1px solid #333",
+              color: "#fff",
+              fontFamily: "var(--font-heading)",
+              fontSize: "12px",
+            },
+          }}
+        />
         <BackToTop />
         <CookieConsent />
       </body>

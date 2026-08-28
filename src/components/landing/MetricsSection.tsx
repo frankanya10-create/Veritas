@@ -18,20 +18,6 @@ export default function MetricsSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1, y: 0,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          end: "top 30%",
-          scrub: 1,
-        },
-      }
-    );
-
     const els = sectionRef.current?.querySelectorAll("[data-count]");
     if (!els) return;
 
@@ -60,17 +46,17 @@ export default function MetricsSection() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 px-6 bg-white border-b border-black/[0.04]"
+      className="py-20 px-6 bg-black border-b border-white/[0.08]"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
         {metrics.map((m) => (
           <div key={m.label} className="text-center">
-            <div className="text-4xl md:text-5xl font-[var(--font-heading)] font-bold text-black tracking-tight mb-2">
+            <div className="text-4xl md:text-5xl font-[var(--font-heading)] font-bold text-white tracking-tight mb-2">
               <span data-count={m.value} data-suffix={m.suffix}>
                 0{m.suffix}
               </span>
             </div>
-            <div className="text-[11px] font-[var(--font-heading)] font-medium tracking-wider uppercase text-black/40">
+            <div className="text-[11px] font-[var(--font-heading)] font-medium tracking-wider uppercase text-white/40">
               {m.label}
             </div>
           </div>

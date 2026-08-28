@@ -50,7 +50,7 @@ export default function AIView() {
               "Document access provisioning and de-provisioning procedures",
             ],
             confidence: 0.92,
-            model: "llama3.2:3b",
+            model: "gemma4:12b",
             latency_ms: 347,
           },
           null,
@@ -69,7 +69,7 @@ export default function AIView() {
         </span>
         <h1 className="font-mono text-2xl font-bold mt-1">{t.ai.title}</h1>
         <p className="font-mono text-[11px] text-aegis-muted mt-1">
-          Powered by Llama 3.2:3B via Ollama — all queries processed locally
+          Powered by Gemma 4 12B via Ollama — all queries processed locally
         </p>
       </div>
 
@@ -127,7 +127,7 @@ export default function AIView() {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle>Oracle Response</CardTitle>
-                  <Badge variant="green">347ms · llama3.2:3b</Badge>
+                  <Badge variant="green">347ms · gemma4:12b</Badge>
                 </div>
               </CardHeader>
               <CardContent>

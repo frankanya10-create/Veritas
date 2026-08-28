@@ -196,7 +196,7 @@ export default function EvidenceView() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
           <CardHeader>
-            <CardTitle>Smart Evidence Parser (Llama 3.2:3B)</CardTitle>
+            <CardTitle>Smart Evidence Parser (Gemma 4 12B)</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="font-mono text-[10px] text-aegis-muted mb-3">

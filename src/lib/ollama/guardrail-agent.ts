@@ -113,7 +113,7 @@ export async function scanPR(
       flags,
       riskScore: data.risk_score,
       clearance: data.clearance as GuardrailResult["clearance"],
-      model: "llama3.2:3b",
+      model: ollama.getActiveModel(),
       latency_ms: Date.now() - start,
     };
   } catch {
@@ -208,7 +208,7 @@ function fallbackScan(
       : flags.some((f) => f.severity === "high")
         ? "conditional"
         : "pass",
-    model: "llama3.2:3b (offline-fallback)",
+    model: `${ollama.getActiveModel()} (offline-fallback)`,
     latency_ms: Date.now() - start,
   };
 }

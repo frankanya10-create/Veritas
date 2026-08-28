@@ -1,5 +1,4 @@
-import LedgerView from "@/components/dashboard/pages/LedgerPage";
-
+import LedgerView from "@/components/dashboard/LedgerView";
 export default function LedgerPage() {
   return <LedgerView />;
 }

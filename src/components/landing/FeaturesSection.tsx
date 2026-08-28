@@ -53,12 +53,10 @@ const allCapabilities = [
   "Regulatory Policy Compliance Engine (Central Bank of Nigeria & Global Standards alignment)",
   "Cross-Examination Agent Verification Loops (Multi-agent consensus voting)",
   "Long-Document Context Processing for massive regulatory updates",
-  "Automated Audit Trail Generation & Cryptographic State Logging",
   "Pydantic Data Validation & Sanitization Layer",
   "Dynamic Risk Scoring & Predictive Fraud Vector Analytics",
   "Automated Regulatory Report Draft Generation (.pdf / .docx auto-exporter)",
   "Granular Traceability Node Mapping (Visual explanation of agent decision trees)",
-  "Multi-Tenant Enterprise Access Control (RBAC & Service-level tokens)",
   "Self-Healing System Infrastructure & Agent Failure Recovery Loops",
   "Continuous Integration Data Pipelines via Dockerized Microservices",
   "Historical Backtesting Sandbox for new policy changes",
@@ -74,20 +72,6 @@ export default function FeaturesSection() {
   const headerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1, y: 0,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          end: "top 30%",
-          scrub: 1,
-        },
-      }
-    );
-
     const cards = sectionRef.current?.querySelectorAll("[data-feature-card]");
     const caps = sectionRef.current?.querySelectorAll("[data-cap]");
 
@@ -140,16 +124,16 @@ export default function FeaturesSection() {
   }, []);
 
   return (
-    <section id="features" ref={sectionRef} className="py-32 px-6 bg-white">
+    <section id="features" ref={sectionRef} className="py-32 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <div ref={headerRef} className="text-center mb-20">
-          <span className="font-[var(--font-heading)] text-[10px] uppercase tracking-[0.25em] text-black/30">
+          <span className="font-[var(--font-heading)] text-[10px] uppercase tracking-[0.25em] text-white/30">
             // CORE CAPABILITIES
           </span>
-          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold mt-4 mb-4 text-black">
+          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold mt-4 mb-4 text-white">
             25 engines. One unified platform.
           </h2>
-          <p className="text-black/40 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="text-white/40 max-w-xl mx-auto text-sm leading-relaxed">
             Multi-agent AI orchestration for financial compliance, fraud detection,
             and regulatory automation — all running locally on your infrastructure.
           </p>
@@ -161,15 +145,15 @@ export default function FeaturesSection() {
             <div
               key={f.title}
               data-feature-card
-              className="border border-black/[0.06] p-6 hover:border-black/20 hover:shadow-sm transition-all duration-300 bg-white"
+              className="border border-white/[0.08] p-6 hover:border-white/20 hover:shadow-sm transition-all duration-300 bg-white/[0.03]"
             >
-              <div className="w-8 h-8 border border-black/[0.08] bg-black/[0.02] flex items-center justify-center text-[11px] font-[var(--font-heading)] font-bold text-black/50 mb-4">
+              <div className="w-8 h-8 border border-white/[0.1] bg-white/[0.04] flex items-center justify-center text-[11px] font-[var(--font-heading)] font-bold text-white/50 mb-4">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <h3 className="font-[var(--font-heading)] text-xs font-bold uppercase tracking-wider text-black mb-3">
+              <h3 className="font-[var(--font-heading)] text-xs font-bold uppercase tracking-wider text-white mb-3">
                 {f.title}
               </h3>
-              <p className="text-black/50 text-xs leading-relaxed">
+              <p className="text-white/50 text-xs leading-relaxed">
                 {f.desc}
               </p>
             </div>
@@ -177,8 +161,8 @@ export default function FeaturesSection() {
         </div>
 
         {/* Full capability matrix */}
-        <div className="border-t border-black/[0.06] pt-12">
-          <span className="font-[var(--font-heading)] text-[10px] uppercase tracking-[0.25em] text-black/30 block text-center mb-8">
+        <div className="border-t border-white/[0.08] pt-12">
+          <span className="font-[var(--font-heading)] text-[10px] uppercase tracking-[0.25em] text-white/30 block text-center mb-8">
             // COMPLETE CAPABILITY MATRIX
           </span>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -186,10 +170,10 @@ export default function FeaturesSection() {
               <div
                 key={cap}
                 data-cap
-                className="flex items-start gap-2.5 px-3 py-2.5 border border-transparent hover:border-black/[0.06] transition-colors duration-200"
+                className="flex items-start gap-2.5 px-3 py-2.5 border border-transparent hover:border-white/[0.08] transition-colors duration-200"
               >
-                <span className="w-1 h-1 rounded-full bg-black/20 mt-2 shrink-0" />
-                <span className="text-[11px] text-black/60 leading-relaxed">
+                <span className="w-1 h-1 rounded-full bg-white/20 mt-2 shrink-0" />
+                <span className="text-[11px] text-white/50 leading-relaxed">
                   {cap}
                 </span>
               </div>

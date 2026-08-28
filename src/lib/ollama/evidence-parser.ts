@@ -1,7 +1,7 @@
 /**
  * Smart Evidence Parser
  *
- * Takes raw text/log dumps and forces Llama 3.2:3B to output clean
+ * Takes raw text/log dumps and forces the active Ollama model to output clean
  * JSON schemas matching database parameters.
  */
 

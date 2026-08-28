@@ -23,20 +23,6 @@ export default function TrustedBy() {
   const trackRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1, y: 0,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          end: "top 30%",
-          scrub: 1,
-        },
-      }
-    );
-
     if (!trackRef.current) return;
     gsap.set(trackRef.current, { x: 0 });
     const loop = gsap.to(trackRef.current, {

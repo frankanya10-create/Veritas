@@ -1,7 +1,7 @@
 /**
  * Local RAG Regulation Oracle
  *
- * Retrieves relevant regulatory context chunks and uses Llama 3.2:3B
+ * Retrieves relevant regulatory context chunks and uses the active Ollama model
  * to answer natural language compliance queries.
  */
 
@@ -155,7 +155,7 @@ export async function queryOracle(
     )
     .join("\n\n");
 
-  // Generate answer with Llama 3.2:3B
+  // Generate answer with active Ollama model
   const systemPrompt = `You are a compliance regulation oracle. Answer the user's question using ONLY the provided regulatory context. Be specific and reference control IDs. Output valid JSON.`;
 
   const prompt = `Regulatory Context:\n${context}\n\nQuestion: ${question}\n\nRespond with a JSON object containing:
@@ -186,7 +186,7 @@ export async function queryOracle(
       })),
       recommendations: parsed.recommendations || [],
       confidence: parsed.confidence || chunks[0]?.score || 0.5,
-      model: "llama3.2:3b",
+      model: ollama.getActiveModel(),
       latency_ms: latency,
     };
   } catch {
@@ -206,7 +206,7 @@ export async function queryOracle(
         "Cross-reference with mapped controls in the compliance matrix",
       ],
       confidence: chunks[0]?.score || 0.5,
-      model: "llama3.2:3b (offline-fallback)",
+      model: `${ollama.getActiveModel()} (offline-fallback)`,
       latency_ms: latency,
     };
   }

@@ -34,20 +34,6 @@ export default function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1, y: 0,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          end: "top 30%",
-          scrub: 1,
-        },
-      }
-    );
-
     const cards = sectionRef.current?.querySelectorAll("[data-testimonial]");
     if (!cards) return;
 

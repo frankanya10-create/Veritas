@@ -219,13 +219,13 @@ export default function NavigationBar() {
                 className="absolute right-0 top-full mt-1.5 bg-zinc-900 border border-zinc-800 py-1 min-w-[150px] z-50 rounded-lg overflow-hidden"
               >
                 <a
-                  href="/sign-in"
+                  href="/login"
                   className="block px-3.5 py-2 text-[10px] font-[var(--font-heading)] tracking-wider text-zinc-400 hover:text-white hover:bg-zinc-800 duration-0 uppercase"
                 >
                   Sign In
                 </a>
                 <a
-                  href="/sign-up"
+                  href="/signup"
                   className="block px-3.5 py-2 text-[10px] font-[var(--font-heading)] tracking-wider text-zinc-400 hover:text-white hover:bg-zinc-800 duration-0 uppercase"
                 >
                   Sign Up

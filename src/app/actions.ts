@@ -14,11 +14,12 @@ export async function signIn(formData: FormData) {
 
 export async function signUp(formData: FormData) {
   const auth = createAuthActions({ cookies: await cookies() });
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
   const { data, error } = await auth.signUp({
     email: String(formData.get("email")),
     password: String(formData.get("password")),
     name: String(formData.get("name") ?? ""),
-    redirectTo: new URL("/sign-in", process.env.NEXT_PUBLIC_APP_URL).toString(),
+    redirectTo: new URL("/login", appUrl).toString(),
   });
   return {
     data: data ?? null,
@@ -41,7 +42,7 @@ export async function verifyEmail(formData: FormData) {
   if (onboardingComplete) {
     return { redirect: "/dashboard", user: data?.user };
   }
-  return { redirect: "/onboarding", user: data?.user };
+  return { redirect: "/onboarding/stage-1", user: data?.user };
 }
 
 export async function signOut() {
@@ -52,8 +53,9 @@ export async function signOut() {
 export async function initiateOAuth(provider: string) {
   const cookieStore = await cookies();
   const auth = createAuthActions({ cookies: cookieStore });
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
   const { data, error } = await auth.signInWithOAuth(provider, {
-    redirectTo: new URL("/api/auth/callback", process.env.NEXT_PUBLIC_APP_URL).toString(),
+    redirectTo: new URL("/api/auth/callback", appUrl).toString(),
     skipBrowserRedirect: true,
   });
 

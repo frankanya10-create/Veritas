@@ -1,5 +1,4 @@
-import DashboardOverview from "@/components/dashboard/pages/DashboardOverview";
-
+import CommandCenter from "@/components/dashboard/CommandCenter";
 export default function DashboardPage() {
-  return <DashboardOverview />;
+  return <CommandCenter />;
 }

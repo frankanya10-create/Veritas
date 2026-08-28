@@ -1,5 +1,4 @@
-import EvidenceView from "@/components/dashboard/pages/EvidencePage";
-
+import EvidenceVault from "@/components/dashboard/EvidenceVault";
 export default function EvidencePage() {
-  return <EvidenceView />;
+  return <EvidenceVault />;
 }
